@@ -1,10 +1,3 @@
-ifeq ("$(wildcard ./Notes.toc)","")
-	PRECOMPILE = xelatex -shell-escape $? > /dev/null
-else
-	PRECOMPILE = 
-endif
-
-
 clean: Notes.log _minted-Notes
 	@echo "[+] Cleaning"
 	rm -rf $?
@@ -12,7 +5,7 @@ clean: Notes.log _minted-Notes
 
 build: Notes.tex
 	@echo "[+] Building"
-	$(PRECOMPILE)
+        xelatex -shell-escape $? > /dev/null
 	xelatex -shell-escape $? > /dev/null
 	@echo "[+] Done"
 
