@@ -5,7 +5,7 @@ clean: Notes.log _minted-Notes
 
 build: Notes.tex
 	@echo "[+] Building"
-        xelatex -shell-escape $? > /dev/null
+	xelatex -shell-escape $? > /dev/null
 	xelatex -shell-escape $? > /dev/null
 	@echo "[+] Done"
 

@@ -139,10 +139,163 @@
 
   \section{Informatica}
   {
-    \subsection{Programmazione a Oggetti}
-    Nella \textbf{programmazione procedurale} un problema, o dominio \small{(ovvero tutte le funzionalità richieste dal cliente)}, é scomposto in \textbf{sottoproblemi} e sono implementati dei metodi che risolvono i sottoproblemi.
+    \subsection{Fondamenti di Java}
+    \textbf{Java} e' un linguaggio di programmazione \textit{fortemente tipizzato} ed \textit{orientato agli oggetti}. Fortemente tipizzato significa che ogni variabile, o dato, ha un suo tipo \small{(come ad esempio \texttt{int}, \texttt{char}, \texttt{double}, ...)}. Orientato agli oggetti significa che favorisce ed incita la \textbf{Programmazione a Oggetti}, meglio spiegata in un successivo capitolo.
+
+    In Java, come nella maggior parte dei linguaggi di programmazione, tutto si svolge all'interno del \textbf{main}, il cuore del programma, e tutta la nostra logica deve partire da li'.
+
+    Di seguito sono elencati i vari modi per eseguire determinate operazioni in Java.
+
+    \subsubsection{Variabili}
+    Una variabile e' un contenitore per un dato di un determinato tipo con un nome ed un valore. Una variabile si puo' definire nel seguente modo:
+
+    \begin{minted}{java}
+      boolean veroOppureFalso = true;
+      char carattereSingolo = 'a';      // Singolo apice
+      String frase = "ciao mondo"       // Doppio apice
+      int intero = 73;
+      long interoGigaEnorme = 50438261842;
+      float virgola = 87.1;
+      double virgolaGigaEnorme = 32829010.32179;
+    \end{minted}
+
+    \subsubsection{Array}
+    Un array, o vettore, e' un insieme indicizzato e limitato di variabili dello stesso tipo. Indicizzato poiche' ogni variabile e' accessibile grazie alla sua posizione nell'array, con indici che iniziano da 0. Limitato poiche' ogni array ha una grandezza massima ben definita. Un array si puo' definire nel seguente modo:
+
+    \begin{minted}{java}
+      // Definiamo un array di interi di dimensione 8
+      int[] serieDiFibonacci = new int[8];      // Per gli altri tipi cambia solo la parola 'int'
+
+      // Inseriamo valore nell'array
+      serieDiFibonacci[0] = 0;
+      serieDiFibonacci[1] = 1;
+      serieDiFibonacci[2] = 1;
+      serieDiFibonacci[3] = 2;
+      serieDiFibonacci[4] = 3;
+      serieDiFibonacci[5] = 5;
+      serieDiFibonacci[6] = 8;
+      serieDiFibonacci[7] = 13;
+
+      // Preleviamo un valore dall'array
+      int primaPosizioneSerie = serieDiFibonacci[0];
+    \end{minted}
+
+    \subsubsection{Output}
+    Java fornisce due semplici funzioni per mostrare un valore in output, ovvero:
+
+    \begin{minted}{java}
+      System.out.println("Scrivi qualcosa e vai a capo");
+      System.out.print("Scrivi qualcosa e rimani sulla linea");
+    \end{minted}
+
+    \newpage
+
+    \subsubsection{Input}
+    Allo stesso modo dell'output, Java fornisce una classe di utilita' per chiedere valori all'utente, ovvero:
+
+    \begin{minted}{java}
+      Scanner input = new Scanner(System.in);
+
+      String valoreString = input.nextLine();
+      int valoreIntero = input.nextInt();
+      float valoreFloat = input.nextFloat();
+      // ...
+    \end{minted}
+
+    \subsubsection{Condizionali}
+    In programmazione i condizionali sono diramazioni del condice in base a condizione, ovvero una qualsiasi operazione che ritorna un risultato vero, \texttt{true}, o falso, \texttt{false}. Un condizionale, o \texttt{if} per semplicita', e' rappresentabile in Java come:
+
+    \begin{minted}{java}
+      int numero = 4;
+      if (numero == 4) {        // Nota l'uso del == per la comparazione
+        // La condizione e' vera
+      } else {
+        // La condizione e' falsa
+      }
+    \end{minted}
+
+    E' inoltre possibile scrivere un \texttt{if} immediatamente dopo un \texttt{else}, creando cosi' una struttura simile a
+
+    \begin{minted}{java}
+      if () {
+        // codice...
+      } else if () {
+        // codice...
+      } else () {
+        // codice...
+      }
+    \end{minted}
+
+    \subsubsection{Loop}
+    Un loop e' una o piu' istruzioni che vengono eseguite ripetutamente. Esistono due tipi di loop in Java:
     
-    Nella \textbf{programmazione a oggetti}, invece, lo stesso problema é invece suddiviso in \textbf{oggetti} fondamentali per il dominio. Ponendo un esempio di un software per gestire una scuola, i vari oggetti potrebbero ad esempio essere un \textit{Alunno}, un \textit{Docente}, una \textit{Classe} e cosí via.
+    \begin{itemize}
+      \item \textbf{For}, usato per quando si conosce il numero di ripetizioni
+      \item \textbf{While}, usato per quando si vuole ripetere finche una condizione non e' vera
+    \end{itemize}
+
+    Le sintassi dei due tipi di loop sono le seguenti:
+
+    \begin{minted}{java}
+      // For
+      for (int i = 0; i < 10; i++) {    // 10 - 0 = 10, percio' il loop viene eseguito 10 volte
+        System.out.println(i);
+      }
+
+      // While
+      int n = 2;
+      while (n  < 128) {
+        System.out.println(n);
+        n = n * 2;
+      }
+    \end{minted}
+
+    \subsection{Programmazione Procedurale}
+    Nella \textbf{programmazione procedurale} un problema, o dominio \small{(ovvero tutte le funzionalità richieste dal cliente)}, é scomposto in \textbf{sottoproblemi} e sono implementati dei \textbf{metodi} che risolvono i sottoproblemi.
+
+    Per definire un metodo, si puo' dire che esso non e' altro che \textit{un sottoprogramma, con i suoi input, la sua logica ed i suoi output}. Per assurdo, qualsiasi cosa possiamo sviluppare come metodo, puo' anche essere sviluppata come programma a parte che, opzionalmente, richiede un qualche input.
+
+    \subsubsection{La definizione di un Metodo}
+    Da un punto di vista Java, un metodo e' strutturato nella seguente maniera:
+
+    \begin{quote}
+      \texttt{visibilita' ritorno nome(tipo argomento1, tipo argomento2, ...) \{ \}}
+    \end{quote}
+
+    Scomponendo le varie parole chiave, possiamo dire che:
+
+    \begin{itemize}
+      \item \textbf{Visibilita'} e' la parola chiave che descrive chi puo' usare questo metodo. Le opzioni sono:
+      \begin{itemize}
+        \item \textit{public}, visibile da tutti
+        \item \textit{private}, visibile, nel nostro caso, solo dallo stesso file
+        \item \textit{protected}, visibile dallo stesso pacchetto
+      \end{itemize}
+      \item \textbf{Ritorno} e' il tipo di dato che il metodo dara' in output. Esiste in questo caso il tipo \texttt{void}, che significa nessun ritorno
+      \item \textbf{Nome} e' autoesplicativo
+      \item \textbf{Tipo Argomento} e' uguale alla definizione di una variabile. Stiamo infatti definendo gli input, o argomenti
+    \end{itemize}
+
+    Nella programmazione procedurale bisogna inoltre aggiungere la parola chiave \texttt{static} subito dopo la visibilita'.
+
+    Detto questo, un esempio di effettivo metodo e':
+
+    \begin{minted}{java}
+      public static int potenzaDiDue(int numero) {
+        return numero * numero;
+      }
+    \end{minted}
+
+    Per utilizzare il valore che questo metodo restituisce grazie alla parola chiave \texttt{return}, basta scrivere:
+
+    \begin{minted}{java}
+      public static void main(String[] args) {
+        int seiAllaSeconda = potenzaDiDue(6);   // La variabile contiene ora il risultato del metodo
+      }
+    \end{minted}
+
+    \subsection{Programmazione a Oggetti}
+    Nella \textbf{programmazione a oggetti}, a differenza di quella procedurale, lo stesso problema é invece suddiviso in \textbf{oggetti} fondamentali per il dominio. Ponendo un esempio di un software per gestire una scuola, i vari oggetti potrebbero ad esempio essere un \textit{Alunno}, un \textit{Docente}, una \textit{Classe} e cosí via.
   }
 
   \section{Sistemi e Reti}
