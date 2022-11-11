@@ -12,6 +12,7 @@
 \usepackage{longtable}
 \usepackage{soul}
 \usepackage{xcolor}
+\usepackage{tikz}
 \usepackage{geometry}
   \geometry{
   a4paper,
@@ -22,6 +23,24 @@
 \let\ogsection\section
 \newcommand{\bigsection}[1]{
   \ogsection{\Large#1}
+}
+
+\newenvironment{nodegraph}[0]{
+  \begin{tikzpicture}[main/.style = {draw, circle}] 
+}{
+  \end{tikzpicture}
+}
+\newcommand{\nodecircle}[2]{
+  \node[main] (#1) {#2};
+}
+\newcommand{\nodecirclerel}[3]{
+  \node[main] (#1) {#2} [#3];
+}
+\newcommand{\nodeline}[2]{
+  \draw (#1) -- (#2);
+}
+\newcommand{\nodearrow}[2]{
+  \draw[->] (#1) -- (#2);
 }
 
 \setcounter{tocdepth}{3}
@@ -117,6 +136,14 @@
   \newpage
   \tableofcontents
   \newpage
+
+  \section{Informatica}
+  {
+    \subsection{Programmazione a Oggetti}
+    Nella \textbf{programmazione procedurale} un problema, o dominio \small{(ovvero tutte le funzionalità richieste dal cliente)}, é scomposto in \textbf{sottoproblemi} e sono implementati dei metodi che risolvono i sottoproblemi.
+    
+    Nella \textbf{programmazione a oggetti}, invece, lo stesso problema é invece suddiviso in \textbf{oggetti} fondamentali per il dominio. Ponendo un esempio di un software per gestire una scuola, i vari oggetti potrebbero ad esempio essere un \textit{Alunno}, un \textit{Docente}, una \textit{Classe} e cosí via.
+  }
 
   \section{Sistemi e Reti}
   {
