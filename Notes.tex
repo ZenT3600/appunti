@@ -142,7 +142,13 @@
     \subsection{Fondamenti di Java}
     \textbf{Java} e' un linguaggio di programmazione \textit{fortemente tipizzato} ed \textit{orientato agli oggetti}. Fortemente tipizzato significa che ogni variabile, o dato, ha un suo tipo \small{(come ad esempio \texttt{int}, \texttt{char}, \texttt{double}, ...)}. Orientato agli oggetti significa che favorisce ed incita la \textbf{Programmazione a Oggetti}, meglio spiegata in un successivo capitolo.
 
-    In Java, come nella maggior parte dei linguaggi di programmazione, tutto si svolge all'interno del \textbf{main}, il cuore del programma, e tutta la nostra logica deve partire da li'.
+    In Java, come nella maggior parte dei linguaggi di programmazione, tutto si svolge all'interno del \textbf{main}, il cuore del programma, e tutta la nostra logica deve partire da li'. Il main in Java e' definito come:
+
+    \begin{minted}{java}
+      public static void main(String[] args) {
+        // Codice
+      }
+    \end{minted}
 
     Di seguito sono elencati i vari modi per eseguire determinate operazioni in Java.
 
@@ -187,8 +193,6 @@
       System.out.println("Scrivi qualcosa e vai a capo");
       System.out.print("Scrivi qualcosa e rimani sulla linea");
     \end{minted}
-
-    \newpage
 
     \subsubsection{Input}
     Allo stesso modo dell'output, Java fornisce una classe di utilita' per chiedere valori all'utente, ovvero:
