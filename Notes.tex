@@ -42,6 +42,7 @@
     \begin{itemize}
       \item texlive-most
       \item git
+      \item make
     \end{itemize}
     ed un sistema operativo Linux, preferibilmente Arch Linux (il sistema su cui viene compilato solitamente)
 
@@ -53,7 +54,7 @@
 
     Si puo' compilare il codice LaTeX grazie al comando
     \begin{minted}{bash}
-      xelatex -shell-escape Notes.tex
+      make build clean
     \end{minted}
 
     \subsection{Note per Scrivere il Sorgente}
