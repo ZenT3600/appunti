@@ -142,7 +142,7 @@
     \subsection{Fondamenti di Java}
     \textbf{Java} e' un linguaggio di programmazione \textit{fortemente tipizzato} ed \textit{orientato agli oggetti}. Fortemente tipizzato significa che ogni variabile, o dato, ha un suo tipo \small{(come ad esempio \texttt{int}, \texttt{char}, \texttt{double}, ...)}. Orientato agli oggetti significa che favorisce ed incita la \textbf{Programmazione a Oggetti}, meglio spiegata in un successivo capitolo.
 
-    In Java, come nella maggior parte dei linguaggi di programmazione, tutto si svolge all'interno del \textbf{main}, il cuore del programma, e tutta la nostra logica deve partire da li'. Il main in Java e' definito come:
+    In Java tutto comincia dal \textbf{main}, il cuore del programma, e tutta la nostra logica deve partire da li'. Il main in Java e' definito come:
 
     \begin{minted}{java}
       public static void main(String[] args) {
@@ -153,7 +153,7 @@
     Di seguito sono elencati i vari modi per eseguire determinate operazioni in Java.
 
     \subsubsection{Variabili}
-    Una variabile e' un contenitore per un dato di un determinato tipo con un nome ed un valore. Una variabile si puo' definire nel seguente modo:
+    Una variabile e' un contenitore per un dato di un determinato tipo a cui viene dato un nome ed un valore. Una variabile si puo' definire nel seguente modo:
 
     \begin{minted}{java}
       boolean veroOppureFalso = true;
@@ -173,17 +173,17 @@
       int[] serieDiFibonacci = new int[8];      // Per gli altri tipi cambia solo la parola 'int'
 
       // Inseriamo valore nell'array
-      serieDiFibonacci[0] = 0;
+      serieDiFibonacci[0] = 1;
       serieDiFibonacci[1] = 1;
-      serieDiFibonacci[2] = 1;
-      serieDiFibonacci[3] = 2;
-      serieDiFibonacci[4] = 3;
-      serieDiFibonacci[5] = 5;
-      serieDiFibonacci[6] = 8;
-      serieDiFibonacci[7] = 13;
+      serieDiFibonacci[2] = 2;
+      serieDiFibonacci[3] = 3;
+      serieDiFibonacci[4] = 5;
+      serieDiFibonacci[5] = 8;
+      serieDiFibonacci[6] = 13;
+      serieDiFibonacci[7] = 21;
 
       // Preleviamo un valore dall'array
-      int primaPosizioneSerie = serieDiFibonacci[0];
+      int primoValoreSerie = serieDiFibonacci[0];
     \end{minted}
 
     \subsubsection{Output}
@@ -207,7 +207,7 @@
     \end{minted}
 
     \subsubsection{Condizionali}
-    In programmazione i condizionali sono diramazioni del condice in base a condizione, ovvero una qualsiasi operazione che ritorna un risultato vero, \texttt{true}, o falso, \texttt{false}. Un condizionale, o \texttt{if} per semplicita', e' rappresentabile in Java come:
+    In programmazione i condizionali sono diramazioni del condice in base a una condizione, ovvero una qualsiasi operazione che ritorna un risultato vero, \texttt{true}, o falso, \texttt{false}. Un condizionale, o \texttt{if} per semplicita', e' rappresentabile in Java come:
 
     \begin{minted}{java}
       int numero = 4;
@@ -257,7 +257,7 @@
     \subsection{Programmazione Procedurale}
     Nella \textbf{programmazione procedurale} un problema, o dominio \small{(ovvero tutte le funzionalità richieste dal cliente)}, é scomposto in \textbf{sottoproblemi} e sono implementati dei \textbf{metodi} che risolvono i sottoproblemi.
 
-    Per definire un metodo, si puo' dire che esso non e' altro che \textit{un sottoprogramma, con i suoi input, la sua logica ed i suoi output}. Per assurdo, qualsiasi cosa possiamo sviluppare come metodo, puo' anche essere sviluppata come programma a parte che, opzionalmente, richiede un qualche input.
+    Quindi un metodo non e' altro che \textit{un sottoprogramma, con i suoi input, la sua logica ed i suoi output}. Per assurdo, qualsiasi cosa possiamo sviluppare come metodo, puo' anche essere sviluppata come programma a parte che, opzionalmente, richiede un qualche input.
 
     \subsubsection{La definizione di un Metodo}
     Da un punto di vista Java, un metodo e' strutturato nella seguente maniera:
@@ -299,7 +299,7 @@
     \end{minted}
 
     \subsection{Programmazione a Oggetti}
-    Nella \textbf{programmazione a oggetti}, a differenza di quella procedurale, lo stesso problema é invece suddiviso in \textbf{oggetti} fondamentali per il dominio. Ponendo un esempio di un software per gestire una scuola, i vari oggetti potrebbero ad esempio essere un \textit{Alunno}, un \textit{Docente}, una \textit{Classe} e cosí via.
+    Nella \textbf{programmazione a oggetti}, a differenza di quella procedurale, lo stesso problema é invece suddiviso in \textbf{oggetti} fondamentali per il dominio. Ponendo un esempio di un software per gestire una scuola, i vari oggetti potrebbero ad esempio essere variabili di tipo \textit{Alunno}, \textit{Docente}, \textit{Classe} e cosí via.
   }
 
   \section{Sistemi e Reti}
