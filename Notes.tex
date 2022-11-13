@@ -6,6 +6,7 @@
 \usepackage{breqn}
 \usepackage{parskip}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{listings}
 \usepackage{minted}
 \usepackage{csvsimple}
@@ -13,6 +14,8 @@
 \usepackage{soul}
 \usepackage{xcolor}
 \usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{width=15cm}
 \usepackage{geometry}
   \geometry{
   a4paper,
@@ -623,4 +626,161 @@
       Pietro, inoltre, comprese che per modernizzare la Russia occorreva superarne l'isolamento intellettuale dovuto alle tradizioni e, percio', adotto' una apertura politica e culturale all'Occidente. Stabili' ambasciate, riorganizzo' l'esercito e adotto' il calendario occidentale.
     \end{quote}
   }
+
+  \section{Matematica}
+  {
+    \subsection{Prerequisiti}
+    \subsubsection{Potenze}
+    Proprieta' delle potenze:
+    \begin{enumerate}
+      \item \textit{Prodotto di potenze con base uguale}: $ 4^2 \times 4^3 = 4^{2 + 3} = 4^5 $
+      \item \textit{Quoziente di potenze con base uguale}: $ \frac{4^4}{4^2} = 4^{4 - 2} = 4^2 $
+      \item \textit{Potenza di potenza}: $ (4^2)^3 = 4^{2 \times 3} = 4^6 $
+      \item \textit{Prodotto di potenze con esponente uguale}: $ 4^2 \times 6^2 = (4 \times 6)^2 $
+      \item \textit{Quoziente di potenze con esponente uguale}: $ \frac{6^2}{4^2} = (\frac{6}{4})^2 $
+      \item \textit{Potenza negativa}: $ \frac{2}{3}^{-2} = \frac{3}{2}^2 $
+    \end{enumerate}
+
+    Potenze particolari:
+    \begin{enumerate}
+      \item $ 1^x = 1 $
+      \item $ 0^x = 0 $
+      \item $ 0^0 = indefinito $
+      \item $ x^0 = 1 $
+    \end{enumerate}
+
+    \subsubsection{Proporzioni}
+    Data la proporzione:
+    $$ estremo_1 : medio_1 = medio_2 : estremo_2 $$
+    Le possibili soluzioni sono:
+    $$ estremo_2 = \frac{medio_1 \times medio_2}{estremo_1}$$
+    $$ medio_2 = \frac{estremo_1 \times estremo_2}{medio_1} $$
+
+    Ad esempio, data la proporzione:
+    $$ 3 : 21 = x : 84 $$
+    Si puo' dire che:
+    $$ x = \frac{3 \times 64}{21} = \frac{192}{21} = 12 $$
+
+    \subsubsection{Equazione di Secondo Grado}
+    Data l'equazione: $ax^2 + bx + c = 0 $
+
+    Si chiama \textbf{discriminante}, o \textbf{delta}, \small{(con simbolo $ \Delta $)} il seguente:
+    $$ \Delta = b^2 - 4ac $$
+
+    Le possibili soluzioni dell'equazione di secondo grado sono date da:
+    $$ x = \frac{-b \pm \sqrt{\Delta}}{2a} $$
+
+    \pagebreak
+
+    \subsection{Funzioni}
+    La funzione generica $ y = f(x) $ e' una relazione tra $ x $ e $ y $, dove l'insieme di tutte le possibili $ x $, chiamato $ \mathbb{X} $, e' detto \textbf{dominio}. L'insieme di tutte le possibili $ y $, invece, e' chiamato $ \mathbb{Y} $ ed e' detto \textbf{codominio}.
+
+    \subsubsection{Funzioni fondamentali}
+    \begin{tikzpicture}
+    \begin{axis}[
+      axis lines = center,
+      xlabel = \(x\),
+      ylabel = \(y\),
+    ]
+      \addplot [
+        domain=-50:50,
+        color=gray,
+      ]{15};
+      \addlegendentry{\(y = 15\) (Costante)}
+
+      \addplot [
+        domain=-50:50,
+        color=black,
+      ]{5 * x};
+      \addlegendentry{\(y = 5x\) (Diretta)}
+
+      \addplot [
+        domain=-50:50,
+        color=red,
+      ]{5 * x + 35};
+      \addlegendentry{\(y = 5x + 35\) (Lineare)}
+
+      \addplot [
+        domain=0:50,
+        color=blue,
+        samples=100
+      ]{150 / x};
+      \addlegendentry{\(y = \frac{150}{x}\) (Inversa)}
+
+      \addplot [
+        domain=-50:50,
+        color=green,
+      ]{(1 / 8) * (x^2)};
+      \addlegendentry{\(y = \frac{1}{8}x^2\) (Quadratica)}
+    \end{axis}
+    \end{tikzpicture}
+
+    \pagebreak
+
+    \subsubsection{Funzione Esponenziale}
+    La funzione esponenziale e' quella funzione definibile come
+
+    $$ y = k^x $$
+
+    dove l'incognita e' quindi all'esponente. Tale funzione e' definita solo per valori 
+    
+    $$ k \in \mathbb{R}^+ - \{1\} $$
+
+    ovvero $ k $ strettamente maggiore di $ 0 $ e diverso da $ 1 $ \small{(Se $ k = 1 $, allora $ y = 1^x $ percio' uguale a $ 1 $, ovvero una funzione costante)}.
+
+    \begin{tikzpicture}
+    \begin{axis}[
+      axis lines = center,
+      xlabel = \(x\),
+      ylabel = \(y\),
+    ]
+      \addplot [
+        domain=-3:3,
+        color=red,
+        samples=200,
+      ]{2^x};
+      \addlegendentry{\(y = k^x\) con \(k > 1\)}
+
+      \addplot [
+        domain=-3:3,
+        color=blue,
+        samples=200
+      ]{(1 / 2)^x};
+      \addlegendentry{\(y = k^x\) con \(0 < k < 1\)}
+    \end{axis}
+    \end{tikzpicture}
+  }
+
+  Caratteristiche:
+  \begin{itemize}
+    \item \textbf{Asintoto}: tendenza della funzione di avvicinarsi ad un valore senza mai raggiungerlo
+    \begin{quote}
+      $ k > 1 $, la funzione presenta un asintoto sull'asse $ x $ per $ x $ che tende a $ -\infty $, vedi curva rossa
+
+      $ 0 < k < 1 $, la funzione presenta un'asintoto sull'asse $ x $ per $ x $ che tende a $ +\infty $, vedi curva blu
+    \end{quote}
+    \item \textbf{Punti notevoli}
+    \begin{quote}
+      $ (0,1) $, la funzione esponenzione passa sempre per $ y = 1 $ per $ x = 0 $
+
+      $ (1,k) $, la funzione esponenziale ha sempre valore $ k $ per $ x = 1 $
+    \end{quote}
+  \end{itemize}
+
+  \pagebreak
+
+  \subsection{Equazione Esponenziale}
+  Un'equazione esponenziale e' quella che ha almeno una incognita sull'esponente. La risoluzione e' immediata usando le regole delle potenze, vedi paragrafo precedente, e riportando tutto alla stessa base.
+
+  Esempio:
+
+  $$ 2^{3x - 5} = 8 $$
+  $$ 2^{3x - 5} = 2^3 $$
+
+  \quote{da qui si puo' passare al livello degli esponenti}
+
+  $$ 3x - 5 = 3 $$
+  $$ 3x = 3 + 5 $$
+  $$ 3x = 8 $$
+  $$ x = \frac{8}{3} $$
 \end{document}
