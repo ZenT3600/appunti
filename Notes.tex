@@ -672,6 +672,57 @@
 
     \pagebreak
 
+    \subsubsection{Trigonometria}
+    In trigonometria, la branca della matematica che studia i rapporti fra gli angoli e i lati di un triangolo, le funzioni fondamentali sono $ sin $, $ cos $ e $ tan $.
+
+    Dato l'angolo $ a $ appartenente al triangolo $ t $ inscritto in una \textbf{circonferenza unitaria}, le funzioni trigonometriche di seno e coseno sono come segue:
+
+    $$ sin(a) = altezza_t $$
+    $$ cos(a) = base_t $$
+
+    Inoltre, se prolunghiamo l'ipotenusa di del triangolo $ t $ fino ad incontrare la retta che \textbf{tange la circonferenza unitaria nel punto $ (1,0) $}, possiamo dire che la tangente e' come segue:
+
+
+    $$ tan(a) = intersezione $$
+
+    \usetikzlibrary{angles,quotes}
+    \newcommand\Base[1][0]{
+      \begin{scope}[xshift=#1]
+        \clip
+          (-0.5,5.5) rectangle (5.5,-0.5);
+          \draw[->]
+          (-0.5,0) -- (5,0) node[right] {$x$};
+        \draw[->]
+          (0,-0.5) -- (0,5) node[above] {$y$};
+        \coordinate (O) at (0,0);
+        \coordinate (aux1) at (40:4);
+        \coordinate (aux2) at (aux1|-0,0);
+        \coordinate (aux3) at (4,{4*tan(40)});
+        \draw
+          (O) -- (aux3) -- (aux3|-0,0)
+          (aux1) -- (aux2);
+        \draw[thick,red!70!black] 
+          (O) circle (4);
+        \pic[draw,"$a$",angle radius=30pt,angle eccentricity=1.2] {angle = aux2--O--aux1};   
+      \end{scope}  
+    }
+
+    \begin{tikzpicture}[>=latex, scale=.75]
+      \Base
+      \filldraw[thick,draw=blue,fill=blue!40,fill opacity=0.3,text opacity=1]
+  (O) -- (aux1) -- node[left] {$\sin a$} (aux2)  -- node[below] {$\cos a$} cycle; 
+      
+      \Base[6.3cm]
+      \filldraw[thick,draw=blue,fill=blue!40,fill opacity=0.3,text opacity=1]
+  (O) -- (aux3) -- node[right] {$\tan a$} (aux3|-0,0)  -- node[below] {$1$} cycle; 
+    \end{tikzpicture}
+
+    Alternativamente, possiamo calcolare la tangente in maniera piu' matematica grazie all'equazione:
+
+    $$ tan(a) = \frac{sin(a)}{cos(a)} $$
+
+    \pagebreak
+
     \subsection{Funzioni}
     La funzione generica $ y = f(x) $ e' una relazione tra $ x $ e $ y $, dove l'insieme di tutte le possibili $ x $, chiamato $ \mathbb{X} $, e' detto \textbf{dominio}. L'insieme di tutte le possibili $ y $, invece, e' chiamato $ \mathbb{Y} $ ed e' detto \textbf{codominio}.
 
