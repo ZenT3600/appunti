@@ -375,7 +375,28 @@
 
     \textbf{Maschera Mobile}
     \begin{quote}
-      Quella della maschera mobile e' una tecnica sviluppata per risparmiare nella creazione di sottoreti. Per capire quanti bit bisogna rubare, si trova il multiplo di 2 minimo necessario a contenere gli host della prima sottorete. Dopodiche', si passa alla prossima sottorete e si calcola il suo numero minimo di multipli di 2. Il risultato ottenuto e' una serie di rete con maschera di rete diversa.
+      Quella della maschera mobile e' una tecnica sviluppata per risparmiare nella creazione di sottoreti. Per capire quanti bit bisogna usare, si trova la $ x $ per $ 2^x \geqslant h_{richiesti} $. Trovata la $ x $, la maschera della sottorete sara' $ 32 - x $ e gli host inizieranno dall'ottetto finale della rete precedente sommato a $ 1 $ e finiranno con l'ottetto final della rete corrente sommato $ 2^x $ e sottratto $ 1 $. Dopodiche', si passa alla prossima sottorete e si ripete. Il risultato ottenuto e' una serie di rete con maschera di rete diversa.
+
+      Esempio:
+
+      \begin{tabular}{ |c|c|c| }
+        \hline
+        Rete & Numero Sottoreti & Host Richiesti \\
+        \hline
+        193.80.1.0/24 & 4 & 40, 30, 10, 6 \\
+        \hline
+      \end{tabular}
+
+      \begin{tabular}{ |c|c|c|c| }
+        \hline
+        Rete & Mask & Da & a \\
+        \hline
+        A & /26 & 193.80.1.1 & 193.80.1.63 \\
+        B & /27 & 193.80.1.64 & 193.80.1.95 \\
+        C & /28 & 193.80.1.96 & 193.80.1.111 \\
+        D & /29 & 193.80.1.112 & 193.80.1.119 \\
+        \hline
+      \end{tabular}
     \end{quote}
   }
 
