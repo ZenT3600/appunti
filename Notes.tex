@@ -305,6 +305,44 @@
     Nella \textbf{programmazione a oggetti}, a differenza di quella procedurale, lo stesso problema é invece suddiviso in \textbf{oggetti} fondamentali per il dominio. Ponendo un esempio di un software per gestire una scuola, i vari oggetti potrebbero ad esempio essere variabili di tipo \textit{Alunno}, \textit{Docente}, \textit{Classe} e cosí via.
   }
 
+  \section{Telecomunicazioni}
+  {
+    \subsection{Segnali}
+    \subsubsection{Segnale Sinusoidale}
+
+    \begin{tikzpicture}
+      \begin{axis}[
+          axis lines = center,
+          xlabel = \(t\),
+          ylabel = \(v(t)\),
+          ymin = -4,
+          ymax = 4,
+      ]
+        \addplot [
+          domain=-10:100,
+          color=red,
+          samples=200,
+        ]{sin(20 * x)};
+        \addlegendentry{\(sin(\omega t + \varphi) \times Ap\)}
+          \draw [very thick] (axis cs:0,1.5) -- node[above]{$T$} (axis cs:13.5,1.5);
+          \draw [very thin] (axis cs:13.5,-1) -- (axis cs:13.5,1.5);
+
+          \draw [very thick] (axis cs:-5,-1) -- node[left, yshift=.5cm]{$Ap$} (axis cs:-5,1);
+          \draw [very thin] (axis cs:-5,-1) -- (axis cs:0,-1);
+          \draw [very thin] (axis cs:-5,1) -- (axis cs:0,1);
+      \end{axis}
+    \end{tikzpicture}
+
+    Valori fondamentali:
+
+    $$ \omega ^{(pulsazione)} = \frac{2\pi}{T} = 2\pi f $$
+    $$ f ^{(frequenza)} = \frac{1}{T} $$
+    $$ \varphi ^{(fase)} = v(0) $$
+    $$ Ap ^{(ampiezza)} $$
+    $$ T ^{(periodo)} $$
+    $$ \lambda ^{(lunghezza d'onda)} = \frac{c ^{(velocita' della luce)}}{f} $$
+  }
+
   \section{Sistemi e Reti}
   {
     \subsection{Calcoli su Indirizzi IP}
