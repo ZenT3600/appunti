@@ -400,6 +400,101 @@
     \end{quote}
   }
 
+  \section{TPSIT}
+  {
+    \subsection{Algoritmi di Scheduling}
+    Gli algoritmi di scheduling sono algoritmi utilizzati dallo \textbf{scheduler di processi} all'interno di un sistema che servono a ridurre al minimo i tempi di attesa dei vari processi.
+
+    Di seguito sono gli algoritmi principali, assieme ad un grafico rappresentante quegli stessi algoritmi.
+
+    \subsubsection{First come, First served}
+    Questo algroritmo, detto anche FCFS, e' basato su di una struttura dati detta \textbf{Coda FIFO}, immaginabile come una coda ad un supermercato, dove il primo che entra e' il primo che esce. Questo algoritmo, percio' \textbf{posiziona i processi in coda in base al tempo di arrivo}.
+
+    \subsubsection{Shortest Job First}
+    Questo algoritmo, detto anche SJF, si fonda sull'idea che il processo piu' corto debba essere eseguito per primo. Questo algoritmo puo' essere interpretato in due modi:
+
+    \textbf{Senza Prelazione}
+    \begin{quote}
+      Questo algoritmo \textbf{posiziona i processi in coda in base al tempo di arrivo ed al tempo di durata}, tuttavia \textbf{non puo' fermare un processo in esecuzione}.
+    \end{quote}
+
+    \textbf{Con Prelazione}
+    \begin{quote}
+      Questo algoritmo si comporta come la sua controparte, con la differenza che \textbf{ha la capacita' di fermare un processo in esecuzione, rimettendolo in coda, qualora arrivi un processo piu' corto}.
+    \end{quote}
+
+    \subsubsection{Round Robin}
+    Questp algoritmo si comporta in maniera simile all'FCFS, richiedendo pero' un parametro di tempo detto \textbf{quanto}. L'algoritmo \textbf{ferma e rimette in coda un il processo in esecuzione una volta che esso e' rimasto in esecuzione per un tempo pari al quanto}. 
+
+    \subsubsection{Esempio}
+    Volendo dare un esempio di questi algoritmi, basandoci sui seguenti processi, essi si comportano cosi':
+
+    \begin{tabular}{ |c|c|c| }
+      \hline
+      ID Processo & Tempo di Durata & Tempo di Arrivo \\
+      \hline
+      1 & 10 & 1 \\
+      2 & 5 & 2 \\
+      3 & 7 & 3 \\
+      4 & 2 & 4 \\
+      \hline
+    \end{tabular}
+
+    \newcommand{\ProcessGraph}[4]{
+      \addplot [
+        domain=#2:#3,
+        color=#4,
+      ]{#1};
+    }
+
+    \begin{tikzpicture}
+      \begin{axis}[
+          axis lines = middle,
+          ylabel = \(process\),
+          xlabel = \(t\),
+          ymin = 0,
+          ymax = 10,
+          legend entries = {
+            First come First served,
+            Shortest Job First Senza Prelazione,
+            Shortest Job First Con Prelazione,
+            Round Robin Con Quanto da 4,
+          },
+      ]
+        \addlegendimage{no markers,red};
+        \addlegendimage{no markers,blue};
+        \addlegendimage{no markers,teal};
+        \addlegendimage{no markers,orange};
+
+        \ProcessGraph{1}{0}{10}{red}
+        \ProcessGraph{2}{10}{15}{red}
+        \ProcessGraph{3}{15}{22}{red}
+        \ProcessGraph{4}{22}{24}{red}
+
+        \ProcessGraph{1.1}{0}{10}{blue}
+        \ProcessGraph{4.1}{10}{12}{blue}
+        \ProcessGraph{2.1}{12}{17}{blue}
+        \ProcessGraph{3.1}{17}{24}{blue}
+
+        \ProcessGraph{1.2}{0}{2}{teal}
+        \ProcessGraph{2.2}{2}{4}{teal}
+        \ProcessGraph{4.2}{4}{6}{teal}
+        \ProcessGraph{2.2}{6}{9}{teal}
+        \ProcessGraph{3.2}{9}{16}{teal}
+        \ProcessGraph{1.2}{16}{24}{teal}
+
+        \ProcessGraph{1.3}{0}{4}{orange}
+        \ProcessGraph{2.3}{4}{8}{orange}
+        \ProcessGraph{3.3}{8}{12}{orange}
+        \ProcessGraph{4.3}{12}{14}{orange}
+        \ProcessGraph{1.3}{14}{18}{orange}
+        \ProcessGraph{2.3}{18}{19}{orange}
+        \ProcessGraph{3.3}{19}{22}{orange}
+        \ProcessGraph{1.3}{22}{24}{orange}
+      \end{axis}
+    \end{tikzpicture}
+  }
+
   \section{Letteratura}
   {
     \subsection{Eta' del Barocco}
