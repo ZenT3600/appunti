@@ -15,6 +15,7 @@
 \usepackage{xcolor}
 \usepackage{tikz}
 \usepackage{pgfplots}
+\usepackage{pgf-umlcd}
 \pgfplotsset{width=15cm}
 \usepackage{geometry}
   \geometry{
@@ -303,6 +304,22 @@
 
     \subsection{Programmazione a Oggetti}
     Nella \textbf{programmazione a oggetti}, a differenza di quella procedurale, lo stesso problema é invece suddiviso in \textbf{oggetti} fondamentali per il dominio. Ponendo un esempio di un software per gestire una scuola, i vari oggetti potrebbero ad esempio essere variabili di tipo \textit{Alunno}, \textit{Docente}, \textit{Classe} e cosí via.
+
+    \subsubsection{Grafici UML}
+    I grafici \textbf{UML}, ovvero Unified Modelling Language, fanno parte del linguaggio omonimo, utilizzato per unificare e rendere scientfica la descrizione di varie parti di un programma.
+
+    Vi sono vari tipi di grafici UML, sotto descritti:
+
+    \textbf{Grafici di Classe}
+    Un grafico di classe, o \textbf{class diagram} e', al livello piu' semplice, rappresentabile in questa maniera:
+    \begin{quote}
+      \begin{tikzpicture}
+        \begin{class}[text width=8cm]{NomeClasse}{0,0}
+          \attribute{attributo : tipo}
+          \operation{metodo(parametro) : tipo}
+        \end{class}
+      \end{tikzpicture}
+    \end{quote}
   }
 
   \pagebreak
