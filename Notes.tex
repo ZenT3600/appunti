@@ -311,12 +311,32 @@
     Vi sono vari tipi di grafici UML, sotto descritti:
 
     \textbf{Grafici di Classe}
-    Un grafico di classe, o \textbf{class diagram} e', al livello piu' semplice, rappresentabile in questa maniera:
     \begin{quote}
+      Un grafico di classe, o \textbf{class diagram} e', al livello piu' semplice, rappresentabile in questa maniera:
+
       \begin{tikzpicture}
         \begin{class}[text width=8cm]{NomeClasse}{0,0}
           \attribute{attributo : tipo}
           \operation{metodo(parametro) : tipo}
+        \end{class}
+      \end{tikzpicture}
+
+      Segue un esempio di class diagram che rappresenta un semplice software per gestire un menu' di un ristorante, ignorando per il momento i metodi di ogni classe, che verranno spiegati piu' avanti:
+
+      \begin{tikzpicture}
+        \begin{class}{Menu}{0,0}
+          \attribute{piatti : Piatto[]}
+        \end{class}
+
+        \begin{class}{Piatto}{6,0}
+          \attribute{nome : String}
+          \attribute{prezzo : double}
+          \attribute{ingredienti : Ingrediente[]}
+          \attribute{allergeni : Ingrediente[]}
+        \end{class}
+
+        \begin{class}{Ingrediente}{0,-1.5}
+          \attribute{nome : String}
         \end{class}
       \end{tikzpicture}
     \end{quote}
@@ -345,8 +365,8 @@
           \draw [very thick] (axis cs:0,1.5) -- node[above]{$T$} (axis cs:18,1.5);
           \draw [very thin] (axis cs:18,-1) -- (axis cs:18,1.5);
 
-          \draw [very thick] (axis cs:-5,-1) -- node[left, yshift=.5cm]{$Ap$} (axis cs:-5,1);
-          \draw [very thin] (axis cs:-5,-1) -- (axis cs:0,-1);
+          \draw [very thick] (axis cs:-5,0) -- node[left, yshift=.5cm]{$Ap$} (axis cs:-5,1);
+          \draw [very thin] (axis cs:-5,0) -- (axis cs:0,0);
           \draw [very thin] (axis cs:-5,1) -- (axis cs:0,1);
       \end{axis}
     \end{tikzpicture}
