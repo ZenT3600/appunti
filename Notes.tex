@@ -533,6 +533,32 @@
         \ProcessGraph{1.3}{22}{24}{orange}
       \end{axis}
     \end{tikzpicture}
+
+	\subsection{Gestione della Memoria}
+	La gestione della memoria deve minimizzare l'\textit{overhead}, ovvero i tempi di attesa, e massimizzare l'utilizzo della memoria
+
+	\subsubsection{Concetti Base}
+	\begin{itemize}
+		\item \textbf{Allocazione e Deallocazione}: inserire e togliere dalla memoria
+		\item \textbf{Protezione e Condivisione}: alcuni pezzi della memoria vanno condivisi per poter essere usati da tutti i processi, altri vanno protetti perché contengono dati sensibili
+		\item \textbf{Swapping}: il processo per cui si alloca una parte di memoria RAM in un file sul disco, per quando la RAM é completamente piena e non c'é altro luogo dove scrivere i dati
+		\item \textbf{Rilocazione Statica e Dinamica}: nella statica la memoria non é swappabile, nella dinamica si
+		\item \textbf{Paginazione}: la memoria é divisa in pagine, i processi in frame. ogni frame rientra in una pagina e punta alla pagina successiva: questo permette di fingere un senso di sequenzialità della memoria
+	\end{itemize}
+
+	\subsubsection{Partizionamento}
+	la memoria é organizzata in \textit{partizioni} ovvero spazi di memoria. ci sono vari tipi di partizionamento:
+	\begin{itemize}
+		\item \textbf{Fisso}: tutte le partizioni sono di uguale dimensione. questo lascia spazio vuoto all'interno delle partizioni (frammentazione interna) visto che puó esserci un solo processo per partizione e non é detto sia grande quanto essa 
+		\item \textbf{Dinamico}: le partizioni sono di dimensione variabile, grandi quanto richiesto dal processo. risolve la frammentazione interna ma introduce la frammentazione esterna (quando un processo viene deallocato rimane uno spazio vuoto che non é detto si possa riempire).
+	\end{itemize}
+	
+	per risolvere la frammentazione esterna si usano vari algoritmi di gestione della memoria:
+	\begin{itemize}
+		\item \textbf{Best-Fit}: i processi si allocano nello spazio più piccolo disponibile (lento, bisogna trovare tutti i buchi)
+		\item \textbf{First-Fit}: i processi si allocano nel primo spazio che puó contenerlo a partire dall'inizio della memoria
+		\item \textbf{Next-Fit}: come il first fit ma si parte dall'ultimo processo allocato invece che dall'inizio della memoria
+	\end{itemize}
   }
 
   \pagebreak
