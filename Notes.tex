@@ -379,6 +379,26 @@
     $$ Ap ^{(ampiezza)} $$
     $$ T ^{(periodo)} $$
     $$ \lambda ^{(lunghezza d'onda)} = \frac{c ^{(velocita' della luce)}}{f} $$
+
+    \subsubsection{Segnale Sinusoidale nei Numeri Complessi}
+    \begin{tikzpicture}
+	\begin{axis}[
+	    xmin=-4.5,
+	    xmax=4.5,
+	    ymin=-4.5,
+	    ymax=4.5,
+	    axis equal,
+	    axis lines=middle,
+	    xlabel=Re,
+	    ylabel=J,
+	    disabledatascaling
+	]
+	    \fill [opacity=0.15] (0,0) circle [radius=2];
+	    \draw [very thick] (axis cs:0,0) -- node [left]{$Ap$} (axis cs:1.4,1.4);
+	    \draw [thick] (axis cs:1.4,1.4) -- node [above]{$\omega$} (axis cs:0.5,2.25);
+	    \draw [] (axis cs:0.25,0) -- node [right]{$\varphi$} (axis cs:0.25,0.25);
+	\end{axis}
+    \end{tikzpicture}
   }
 
   \pagebreak
