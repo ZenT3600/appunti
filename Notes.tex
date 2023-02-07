@@ -382,22 +382,22 @@
 
     \subsubsection{Segnale Sinusoidale nei Numeri Complessi}
     \begin{tikzpicture}
-	\begin{axis}[
-	    xmin=-4.5,
-	    xmax=4.5,
-	    ymin=-4.5,
-	    ymax=4.5,
-	    axis equal,
-	    axis lines=middle,
-	    xlabel=Re,
-	    ylabel=J,
-	    disabledatascaling
-	]
-	    \fill [opacity=0.15] (0,0) circle [radius=2];
-	    \draw [very thick] (axis cs:0,0) -- node [left]{$Ap$} (axis cs:1.4,1.4);
-	    \draw [thick] (axis cs:1.4,1.4) -- node [above]{$\omega$} (axis cs:0.5,2.25);
-	    \draw [] (axis cs:0.25,0) -- node [right]{$\varphi$} (axis cs:0.25,0.25);
-	\end{axis}
+  \begin{axis}[
+      xmin=-4.5,
+      xmax=4.5,
+      ymin=-4.5,
+      ymax=4.5,
+      axis equal,
+      axis lines=middle,
+      xlabel=Re,
+      ylabel=J,
+      disabledatascaling
+  ]
+      \fill [opacity=0.15] (0,0) circle [radius=2];
+      \draw [very thick] (axis cs:0,0) -- node [left]{$Ap$} (axis cs:1.4,1.4);
+      \draw [thick] (axis cs:1.4,1.4) -- node [above]{$\omega$} (axis cs:0.5,2.25);
+      \draw [] (axis cs:0.25,0) -- node [right]{$\varphi$} (axis cs:0.25,0.25);
+  \end{axis}
     \end{tikzpicture}
   }
 
@@ -554,31 +554,31 @@
       \end{axis}
     \end{tikzpicture}
 
-	\subsection{Gestione della Memoria}
-	La gestione della memoria deve minimizzare l'\textit{overhead}, ovvero i tempi di attesa, e massimizzare l'utilizzo della memoria
+  \subsection{Gestione della Memoria}
+  La gestione della memoria deve minimizzare l'\textit{overhead}, ovvero i tempi di attesa, e massimizzare l'utilizzo della memoria
 
-	\subsubsection{Concetti Base}
-	\begin{itemize}
-		\item \textbf{Allocazione e Deallocazione}: inserire e togliere dalla memoria
-		\item \textbf{Protezione e Condivisione}: alcuni pezzi della memoria vanno condivisi per poter essere usati da tutti i processi, altri vanno protetti perché contengono dati sensibili
-		\item \textbf{Swapping}: il processo per cui si alloca una parte di memoria RAM in un file sul disco, per quando la RAM é completamente piena e non c'é altro luogo dove scrivere i dati
-		\item \textbf{Rilocazione Statica e Dinamica}: nella statica la memoria non é swappabile, nella dinamica si
-		\item \textbf{Paginazione}: la memoria é divisa in pagine, i processi in frame. ogni frame rientra in una pagina e punta alla pagina successiva: questo permette di fingere un senso di sequenzialità della memoria
-	\end{itemize}
+  \subsubsection{Concetti Base}
+  \begin{itemize}
+    \item \textbf{Allocazione e Deallocazione}: inserire e togliere dalla memoria
+    \item \textbf{Protezione e Condivisione}: alcuni pezzi della memoria vanno condivisi per poter essere usati da tutti i processi, altri vanno protetti perché contengono dati sensibili
+    \item \textbf{Swapping}: il processo per cui si alloca una parte di memoria RAM in un file sul disco, per quando la RAM é completamente piena e non c'é altro luogo dove scrivere i dati
+    \item \textbf{Rilocazione Statica e Dinamica}: nella statica la memoria non é swappabile, nella dinamica si
+    \item \textbf{Paginazione}: la memoria é divisa in pagine, i processi in frame. ogni frame rientra in una pagina e punta alla pagina successiva: questo permette di fingere un senso di sequenzialità della memoria
+  \end{itemize}
 
-	\subsubsection{Partizionamento}
-	la memoria é organizzata in \textit{partizioni} ovvero spazi di memoria. ci sono vari tipi di partizionamento:
-	\begin{itemize}
-		\item \textbf{Fisso}: tutte le partizioni sono di uguale dimensione. questo lascia spazio vuoto all'interno delle partizioni (frammentazione interna) visto che puó esserci un solo processo per partizione e non é detto sia grande quanto essa 
-		\item \textbf{Dinamico}: le partizioni sono di dimensione variabile, grandi quanto richiesto dal processo. risolve la frammentazione interna ma introduce la frammentazione esterna (quando un processo viene deallocato rimane uno spazio vuoto che non é detto si possa riempire).
-	\end{itemize}
-	
-	per risolvere la frammentazione esterna si usano vari algoritmi di gestione della memoria:
-	\begin{itemize}
-		\item \textbf{Best-Fit}: i processi si allocano nello spazio più piccolo disponibile (lento, bisogna trovare tutti i buchi)
-		\item \textbf{First-Fit}: i processi si allocano nel primo spazio che puó contenerlo a partire dall'inizio della memoria
-		\item \textbf{Next-Fit}: come il first fit ma si parte dall'ultimo processo allocato invece che dall'inizio della memoria
-	\end{itemize}
+  \subsubsection{Partizionamento}
+  la memoria é organizzata in \textit{partizioni} ovvero spazi di memoria. ci sono vari tipi di partizionamento:
+  \begin{itemize}
+    \item \textbf{Fisso}: tutte le partizioni sono di uguale dimensione. questo lascia spazio vuoto all'interno delle partizioni (frammentazione interna) visto che puó esserci un solo processo per partizione e non é detto sia grande quanto essa 
+    \item \textbf{Dinamico}: le partizioni sono di dimensione variabile, grandi quanto richiesto dal processo. risolve la frammentazione interna ma introduce la frammentazione esterna (quando un processo viene deallocato rimane uno spazio vuoto che non é detto si possa riempire).
+  \end{itemize}
+  
+  per risolvere la frammentazione esterna si usano vari algoritmi di gestione della memoria:
+  \begin{itemize}
+    \item \textbf{Best-Fit}: i processi si allocano nello spazio più piccolo disponibile (lento, bisogna trovare tutti i buchi)
+    \item \textbf{First-Fit}: i processi si allocano nel primo spazio che puó contenerlo a partire dall'inizio della memoria
+    \item \textbf{Next-Fit}: come il first fit ma si parte dall'ultimo processo allocato invece che dall'inizio della memoria
+  \end{itemize}
   }
 
   \pagebreak
@@ -1173,4 +1173,41 @@
     \item $ log_a(b) = \frac{log_c(b)}{log_c(a)} $
   \end{itemize}
 
+  \subsection{Limiti}
+  Data una funzione $ f(x) $, non definita per un suo valore $ n $, e' detto "\textit{limite di $ f(x) $ per $ x $ che tende a $ n $}" il valore cui $ f(x) $ si avvicina quando si assegna ad $ x $ un valore sempre piu' vicino ad $ n $.
+
+  \subsubsection{Esempi}
+  Data la funzione
+
+  $$ y = f(x) = \frac{x^2 - 9}{x - 3} $$
+
+  Si puo' affermare che la funzione non e' definita per $ x $ pari a 3, poiche' si avrebbe un denominatore nullo. Si puo' tuttavia stilare la seguente tabella di numeri vicini a 3:
+  
+  \begin{tabular}{ |c|c|c|c|c|c|c|c| }
+    \hline
+    \textbf{x} & 2,9 & 2,99 & 2,999 & 3 & 3,001 & 3,01 & 3,1 \\
+    \textbf{y} & 5,9 & 5,99 & 5,999 & Non definita & 6,001 & 6,01 & 6,1 \\
+    \hline
+  \end{tabular}
+
+  Usando la tabella, possiamo notare che i valori di $ y $ vanno avvicinandosi a 6, percio' si puo' scrivere:
+
+  $$ \lim_{x \to 3} f(x) = 6 $$
+
+  Similmente, data la funzione
+
+  $$ y = f(x) = 2^x $$
+
+  E stilando la tabella:
+
+  \begin{tabular}{ |c|c|c|c|c| }
+    \hline
+    \textbf{x} & 10 & 15 & 20 & 25 \\
+    \textbf{y} & 1024 & 32768 & 1048576 & 33554432 \\
+    \hline
+  \end{tabular}
+
+  Possiamo notare che i valori di $ y $ aumentano a dismisura all'aumentare di x. Possiamo percio' scrivere
+
+  $$ \lim_{x \to +\infty } f(x) = +\infty $$
 \end{document}
