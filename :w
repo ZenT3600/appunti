@@ -580,7 +580,7 @@
         \hline
       \end{tabular}
     \end{quote}
-
+    
     \break
 
     \subsection{Grafi}
@@ -610,7 +610,7 @@
 
     \begin{tabular}{ |c|c|c|c|c|c|c| }
       \hline
-        & A & B & C & D & E & F \\
+        & A & B & C & D & E & F
       A & 0 & 1 & 0 & 1 & 0 & 0 \\
       B & 1 & 0 & 0 & 1 & 0 & 0 \\
       C & 1 & 0 & 0 & 0 & 1 & 1 \\
@@ -619,34 +619,6 @@
       F & 0 & 0 & 1 & 0 & 0 & 0 \\
       \hline
     \end{tabular}
-
-    Dove 0 rappresenta una connessione inesistente, mentre 1 rappresenta una connessione. Nel caso di grafi pesati si usa, al posto del numero 1, il peso del relativo ramo.
-
-    \subsubsection{Visita}
-    Per visita di un grafo si intende \textbf{l'operazione di trovare gli archi minimi necessari a connettere l'intero grafo}. Per svolgere questa operazione esistono vari algoritmi, come i seguenti:
-
-    \textbf{Kruskal}
-    \begin{quote}
-      L'algoritmo di Kruskal afferma che, per visitare un grafo, bisogna mettere in ordine crescente i pesi del grafo interessato ed evidenziare gli archi in ordine, purche l'arco da evidenziare non chiuda una forma geometrica con gli altri archi.
-    
-    \begin{tikzpicture}[node distance=20mm, main/.style = {draw, circle}] 
-      \node[main] (1) {$A$};
-      \node[main] (2) [above right of=1] {$B$};
-      \node[main] (3) [below right of=1] {$C$};
-      \node[main] (4) [right of=2] {$D$};
-      \node[main] (5) [right of=3] {$E$};
-      \node[main] (6) [below right of=4] {$F$};
-
-      \draw[very thick] (1) -- (2) node[midway, fill=white] {2};
-      \draw[-] (1) -- (3) node[midway, fill=white] {7};
-      \draw[very thick] (2) -- (4) node[midway, fill=white] {3};
-      \draw[very thick] (3) -- (5) node[midway, fill=white] {4};
-      \draw[very thick] (5) -- (6) node[midway, fill=white] {1};
-      \draw[very thick] (4) -- (6) node[midway, fill=white] {2};
-      \draw[-] (3) -- (4) node[midway, fill=white] {5};
-    \end{tikzpicture}
-
-    \end{quote}
   }
 
   \pagebreak
