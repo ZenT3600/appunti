@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SCOMM=$(git log --oneline | fzf | awk '{print $1}')
-DIFF=$(git diff $SCOMM:Notes.tex..HEAD:Notes.tex | grep '^+' | cut -c2-)
+DIFF=$(git diff $SCOMM^1:Notes.tex..HEAD:Notes.tex | grep '^+' | cut -c2-)
 
 #echo "Sections:"
 #echo "$DIFF" | grep -F '\section{' | cut -d "{" -f2 | cut -d "}" -f1
