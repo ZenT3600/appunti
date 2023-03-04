@@ -69,6 +69,8 @@ Ogni oggetto puo' avere delle caratteristiche. Dato l'esempio dello stadio di ca
 
 Ogni oggetto puo' anche compiere delle azioni. Dato l'esempio dello stadio di calcio, l'oggetto **calciatore** potra' compiere le azioni di **passare la palla**, **calciare il pallone**, **esultare** e cosi' via.
 
+Un metodo puo' avere un tipo di ritorno, oppure essere void (quindi senza tipo di ritorno)
+
 **Ogni azione che un oggetto puo' compiere e' detta metodo**
 
 ### 1.7 - Cos'e' un Costruttore
@@ -81,7 +83,7 @@ Oggetto nome = new Oggetto(valori)
 
 Dove `Oggetto` e' la nostra classe. Notiamo che **possiamo passare dei valori all'oggetto** mentre lo creiamo. Facendo questo stiamo usando il **metodo costruttore** per impostare i valori iniziali dell'oggetto.
 
-**Il costruttore e' un metodo con lo stesso nome della classe**
+**Il costruttore e' un metodo con lo stesso nome della classe che non specifica il tipo di ritorno**
 
 ### 1.8 - Esempio pratico
 
@@ -175,12 +177,12 @@ Progetta e scrivi un programma, orientato agli oggetti, che gestisce una classe 
 
 ### 2.1 - Modificatori di Livello d'Accesso
 
-In Java, **se non specificato**, ogni classe, metodo e attributo e' considerato **pubblico**. Cio' significa che chiunque al di fuori della classe puo' leggere e modificare quel valore o eseguire quel metodo. Questa non e' sempre la scelta migliore.
+In Java, **se non specificato**, ogni classe, metodo e attributo e' considerato **protected**. Cio' significa che chiunque all'interno dello stesso pacchetto puo' leggere e modificare quel valore o eseguire quel metodo. Questa non e' sempre la scelta migliore.
 
 Per ovviare a questo problema, esistono dei modificatori, **inseribili prima del tipo di un metodo o di un attributo**, capaci di modificare chi puo' accedervi. Sono:
 
 - `public`
-  - Come il default, chiunque puo' accedere, modificare e eseguire
+  - Chiunque puo' accedere, modificare e eseguire
 
 - `private`
   - Nessuno all'esterno della classe puo' accedere, modificare e eseguire
